@@ -8,9 +8,11 @@ const Home = () => {
   const [users, setUser] = useContext(UserContext);
   return (
     <div>
-      <Button className="create_btn" variant="primary">
-        Primary
-      </Button>
+      <Link to="/create">
+        <Button className="create_btn" variant="primary">
+          Add User
+        </Button>
+      </Link>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -29,9 +31,11 @@ const Home = () => {
               <td>{user.position}</td>
               <td>{user.salary}</td>
               <td>
-                <Button className="btn" variant="secondary">
-                  Edit
-                </Button>
+                <Link to={"/edit/" + user.id}>
+                  <Button className="btn" variant="secondary">
+                    Edit
+                  </Button>
+                </Link>
                 <Link to={"/read/" + user.id}>
                   <Button className="btn" variant="success">
                     Read

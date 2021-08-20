@@ -5,6 +5,8 @@ import Home from "./component/Home/Home";
 import { UserProvider } from "./component/UserContext/UserContext";
 import Delete from "./component/Delete/Delete";
 import Read from "./component/Read/Read";
+import Create from "./component/Create/Create";
+import Edit from "./component/Edit/Edit";
 
 function App() {
   return (
@@ -12,6 +14,12 @@ function App() {
       <UserProvider>
         <Router>
           <Switch>
+            <Route path="/create/">
+              <Create />
+            </Route>
+            <Route path="/edit/:id">
+              <Edit />
+            </Route>
             <Route path="/read/:id">
               <Read />
             </Route>
